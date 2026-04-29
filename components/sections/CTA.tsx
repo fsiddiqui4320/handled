@@ -1,6 +1,7 @@
 'use client'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
+import FadeIn from '@/components/ui/FadeIn'
 
 interface FormValues { email: string }
 
@@ -16,6 +17,7 @@ export default function CTA() {
   return (
     <section className="bg-handled-950 py-20 px-6">
       <div className="mx-auto max-w-content flex justify-center">
+        <FadeIn direction="none">
         <div className="w-full max-w-[480px] text-center">
           <p className="text-[10px] tracking-widest uppercase text-handled-300 font-medium mb-4">Work with us</p>
           <h2 className="text-[28px] font-medium text-white mb-3 leading-tight">
@@ -52,6 +54,7 @@ export default function CTA() {
             </>
           )}
         </div>
+        </FadeIn>
       </div>
     </section>
   )
