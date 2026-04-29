@@ -2,26 +2,71 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f5f7f5;
+  color: #1a2420;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.prose-legal {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #1a2420;
+}
+.prose-legal h2 {
+  font-size: 18px;
+  font-weight: 500;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  color: #1a2420;
+}
+.prose-legal h3 {
+  font-size: 15px;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #1a2420;
+}
+.prose-legal p {
+  margin-bottom: 1rem;
+}
+.prose-legal ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+.prose-legal ul li {
+  margin-bottom: 0.4rem;
+}
+.prose-legal table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  margin-bottom: 1.5rem;
+}
+.prose-legal table th {
+  background: #e8efeb;
+  font-weight: 500;
+  text-align: left;
+  padding: 8px 12px;
+  border: 1px solid #cdd5d0;
+}
+.prose-legal table td {
+  padding: 8px 12px;
+  border: 1px solid #cdd5d0;
+  vertical-align: top;
+}
+.prose-legal table tr:nth-child(even) td {
+  background: #f5f7f5;
+}
+.prose-legal em.in-short {
+  display: block;
+  color: #5a6660;
+  font-style: italic;
+  margin-bottom: 0.75rem;
+  padding-left: 0.75rem;
+  border-left: 2px solid #cdd5d0;
 }
