@@ -19,7 +19,7 @@ export default function WorkflowCard() {
   }, [])
 
   return (
-    <div className="bg-handled-900/80 border border-handled-700/50 rounded-2xl p-5 shadow-xl w-full max-w-sm mx-auto">
+    <div className="bg-handled-900/80 border border-handled-700/50 rounded-2xl p-5 shadow-2xl shadow-black/35 backdrop-blur-sm w-full max-w-sm mx-auto">
       <p className="text-[10px] tracking-widest uppercase text-handled-300 font-medium mb-4">
         Credentialing queue — live
       </p>
