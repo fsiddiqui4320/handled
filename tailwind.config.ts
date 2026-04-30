@@ -7,6 +7,19 @@ const config: Config = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    colors: {
+      stone: {
+        950: '#1a2420',
+        800: '#3a4440',
+        700: '#4a5450',
+        600: '#5a6660',
+        500: '#728078',
+        400: '#8a9490',
+        200: '#cdd5d0',
+        100: '#e8efeb',
+        50:  '#f5f7f5',
+      },
+    },
     extend: {
       colors: {
         handled: {
@@ -21,16 +34,23 @@ const config: Config = {
           100: '#b8e8cc',
           50:  '#e1f5ee',
         },
-        stone: {
-          950: '#1a2420',
-          800: '#3a4440',
-          600: '#5a6660',
-          400: '#8a9490',
-          200: '#cdd5d0',
-          100: '#e8efeb',
-          50:  '#f5f7f5',
-        },
         mint: '#f0f7f2',
+        transparent: 'transparent',
+        current: 'currentColor',
+        white: '#ffffff',
+        black: '#000000',
+        blue: {
+          800: '#1e40af',
+          100: '#dbeafe',
+          50:  '#eff6ff',
+        },
+        red: {
+          400: '#f87171',
+        },
+        amber: {
+          400: '#fbbf24',
+          300: '#fcd34d',
+        },
       },
       fontFamily: {
         sans: ['DM Sans', 'ui-sans-serif', 'system-ui', 'sans-serif'],
