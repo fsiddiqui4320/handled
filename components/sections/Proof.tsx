@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export default function Proof() {
   return (
-    <section className="bg-white py-20 px-6">
+    <section className="bg-mint py-20 px-6">
       <div className="mx-auto max-w-content flex justify-center">
         <div className="max-w-[560px] text-center">
           <blockquote className="text-[16px] text-stone-700 leading-relaxed mb-4">
