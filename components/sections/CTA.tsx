@@ -15,7 +15,7 @@ export default function CTA() {
   }
 
   return (
-    <section className="relative bg-handled-950 py-20 px-6 overflow-hidden">
+    <section id="cta" className="relative bg-handled-950 py-20 px-6 overflow-hidden">
       <div className="pointer-events-none absolute -top-20 -right-16 w-[400px] h-[400px] rounded-full bg-[radial-gradient(circle,rgba(77,175,124,0.05)_0%,transparent_65%)]" />
 
       <div className="relative z-10 mx-auto max-w-content flex justify-center">
