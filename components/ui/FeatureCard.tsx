@@ -6,7 +6,7 @@ interface FeatureCardProps {
 
 export default function FeatureCard({ icon, title, body }: FeatureCardProps) {
   return (
-    <div className="bg-stone-50 border border-stone-200 rounded-xl p-5">
+    <div className="bg-white border border-stone-200 rounded-xl p-5">
       <div className="w-9 h-9 bg-handled-800 rounded-lg flex items-center justify-center mb-4">
         {icon}
       </div>
