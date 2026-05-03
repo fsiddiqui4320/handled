@@ -10,7 +10,7 @@ export default function Industries() {
           <p className="text-[10px] tracking-widest uppercase text-stone-400 font-medium mb-3">
             Purpose-built for regulated industries
           </p>
-          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-stone-950 mb-10 leading-tight">
+          <h2 className="font-serif-clean text-3xl sm:text-4xl font-semibold text-stone-950 mb-10 leading-tight">
             Deep in the workflows that matter most.
           </h2>
         </FadeIn>

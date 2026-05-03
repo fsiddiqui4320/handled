@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=DM+Sans:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=DM+Sans:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -71,6 +71,36 @@ body {
   margin-bottom: 0.75rem;
   padding-left: 0.75rem;
   border-left: 2px solid #cdd5d0;
+}
+
+/* Hero background glows — moved here because complex gradient strings don't belong in JSX */
+.hero-glow-tr {
+  position: absolute;
+  top: -6rem;
+  right: -5rem;
+  width: 700px;
+  height: 700px;
+  border-radius: 9999px;
+  background: radial-gradient(circle, rgba(77, 175, 124, 0.13) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.hero-glow-bl {
+  position: absolute;
+  bottom: 3rem;
+  left: -4rem;
+  width: 500px;
+  height: 500px;
+  border-radius: 9999px;
+  background: radial-gradient(circle, rgba(77, 175, 124, 0.10) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-glow-center {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(77, 175, 124, 0.07) 0%, transparent 60%);
+  pointer-events: none;
 }
 
 .headline-glow {

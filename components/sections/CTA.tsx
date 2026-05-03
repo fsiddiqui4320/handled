@@ -22,7 +22,7 @@ export default function CTA() {
         <FadeIn direction="none">
           <div className="w-full max-w-[480px] text-center">
             <p className="text-[10px] tracking-widest uppercase text-handled-300 font-medium mb-4">Work with us</p>
-            <h2 className="font-serif text-[28px] font-bold text-white mb-3 leading-tight">
+            <h2 className="font-serif-clean text-[28px] font-semibold text-white mb-3 leading-tight">
               Tell us which operation is slowing you down.
             </h2>
             <p className="text-sm text-white/40 mb-8">

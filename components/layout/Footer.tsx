@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 const productLinks = [
   { label: 'Healthcare', href: '/healthcare' },
@@ -21,16 +22,14 @@ export default function Footer() {
       <div className="mx-auto max-w-content px-6 py-12 grid grid-cols-1 md:grid-cols-2 gap-10">
         {/* Left */}
         <div>
-          <div className="flex items-center gap-2 mb-3">
-            <div className="w-6 h-6 bg-handled-800 rounded flex items-center justify-center">
-              <svg width="12" height="12" viewBox="0 0 14 14" fill="none">
-                <rect x="1" y="1" width="4" height="4" rx="0.5" fill="white" opacity="0.9"/>
-                <rect x="9" y="1" width="4" height="4" rx="0.5" fill="white" opacity="0.9"/>
-                <rect x="1" y="9" width="4" height="4" rx="0.5" fill="white" opacity="0.9"/>
-                <rect x="9" y="9" width="4" height="4" rx="0.5" fill="white" opacity="0.9"/>
-              </svg>
-            </div>
-            <span className="font-medium text-stone-950 text-sm">Handled</span>
+          <div className="mb-3">
+            <Image
+              src="/logos/handled-logo.svg"
+              alt="Handled"
+              width={100}
+              height={30}
+              className="opacity-80"
+            />
           </div>
           <p className="text-stone-500 text-[13px] leading-relaxed max-w-xs">
             AI-powered back-office operations for healthcare and financial services.

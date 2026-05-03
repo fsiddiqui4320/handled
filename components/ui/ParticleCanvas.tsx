@@ -8,8 +8,8 @@ interface ParticleCanvasProps {
 }
 
 export default function ParticleCanvas({
-  nodeCount = 40,
-  maxDist = 100,
+  nodeCount = 80,
+  maxDist = 140,
   className = '',
 }: ParticleCanvasProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
@@ -32,9 +32,9 @@ export default function ParticleCanvas({
       nodes = Array.from({ length: nodeCount }, () => ({
         x: Math.random() * W,
         y: Math.random() * H,
-        vx: (Math.random() - 0.5) * 0.35,
-        vy: (Math.random() - 0.5) * 0.35,
-        r: Math.random() * 1.8 + 0.8,
+        vx: (Math.random() - 0.5) * 0.4,
+        vy: (Math.random() - 0.5) * 0.4,
+        r: Math.random() * 2.2 + 1.2,
       }))
     }
 
@@ -55,16 +55,22 @@ export default function ParticleCanvas({
             ctx!.beginPath()
             ctx!.moveTo(nodes[i].x, nodes[i].y)
             ctx!.lineTo(nodes[j].x, nodes[j].y)
-            ctx!.strokeStyle = `rgba(77,175,124,${(1 - dist / maxDist) * 0.25})`
-            ctx!.lineWidth = 0.6
+            ctx!.strokeStyle = `rgba(77,175,124,${(1 - dist / maxDist) * 0.38})`
+            ctx!.lineWidth = 0.8
             ctx!.stroke()
           }
         }
       }
       for (const n of nodes) {
+        // soft glow halo
+        ctx!.beginPath()
+        ctx!.arc(n.x, n.y, n.r * 3.5, 0, Math.PI * 2)
+        ctx!.fillStyle = 'rgba(77,175,124,0.06)'
+        ctx!.fill()
+        // solid dot
         ctx!.beginPath()
         ctx!.arc(n.x, n.y, n.r, 0, Math.PI * 2)
-        ctx!.fillStyle = 'rgba(77,175,124,0.6)'
+        ctx!.fillStyle = 'rgba(77,175,124,0.78)'
         ctx!.fill()
       }
       animId = requestAnimationFrame(draw)

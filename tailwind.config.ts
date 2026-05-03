@@ -55,6 +55,7 @@ const config: Config = {
       fontFamily: {
         sans: ['DM Sans', 'ui-sans-serif', 'system-ui', 'sans-serif'],
         serif: ['Playfair Display', 'Georgia', 'serif'],
+        'serif-clean': ['Newsreader', 'Georgia', 'serif'],
       },
       maxWidth: {
         content: '1200px',
