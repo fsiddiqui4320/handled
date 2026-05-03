@@ -75,7 +75,6 @@ export default function Hero() {
                   </motion.span>
                 </AnimatePresence>
               </span>
-              ,
             </span>
             <em className="block font-serif font-normal headline-glow-accent leading-[1.05] text-[clamp(3rem,calc(4vw_+_2rem),5rem)]">
               handled.
