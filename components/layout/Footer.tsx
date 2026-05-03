@@ -26,8 +26,9 @@ export default function Footer() {
             <Image
               src="/logos/handled-logo.svg"
               alt="Handled"
-              width={110}
-              height={34}
+              width={100}
+              height={30}
+              className="opacity-80"
             />
           </div>
           <p className="text-stone-500 text-[13px] leading-relaxed max-w-xs">

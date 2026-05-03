@@ -1,65 +1,69 @@
 'use client'
-import Badge from '@/components/ui/Badge'
-import Button from '@/components/ui/Button'
-import WorkflowCard from '@/components/ui/WorkflowCard'
+import { useState, useEffect } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
 import FadeIn from '@/components/ui/FadeIn'
+import ParticleCanvas from '@/components/ui/ParticleCanvas'
 
-const trustPills = ['Built by Rippling alumni', 'Wiser team', 'HIPAA-ready']
+const ROTATING_WORDS = ['hate', 'ignore', 'avoid', 'delay'] as const
 
 export default function Hero() {
-  const scrollToHowDifferent = () => {
-    document.getElementById('how-different')?.scrollIntoView({ behavior: 'smooth' })
+  const [wordIndex, setWordIndex] = useState(0)
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setWordIndex(i => (i + 1) % ROTATING_WORDS.length)
+    }, 1500)
+    return () => clearInterval(id)
+  }, [])
+
+  const scrollToCTA = () => {
+    document.getElementById('cta')?.scrollIntoView({ behavior: 'smooth' })
   }
 
   return (
-    <section className="bg-handled-950 pt-16 pb-20 px-6">
-      <div className="mx-auto max-w-content">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left */}
-          <div>
-            <FadeIn delay={0}>
-              <p className="text-[10px] tracking-widest uppercase text-handled-300 font-medium mb-5">
-                AI operations for regulated industries
-              </p>
-            </FadeIn>
-            <FadeIn delay={0.1}>
-              <h1 className="text-4xl sm:text-5xl font-bold text-white leading-tight mb-5">
-                Your team shouldn&apos;t be{' '}
-                <span className="text-handled-300">doing the work</span>{' '}
-                AI can do.
-              </h1>
-            </FadeIn>
-            <FadeIn delay={0.15}>
-              <p className="text-[17px] text-white/60 leading-relaxed mb-8 max-w-lg">
-                Handled runs your back-office operations — credentialing, enrollment, retention, onboarding — using AI agents that work inside your existing systems. No migration. No new headcount.
-              </p>
-            </FadeIn>
+    <section className="relative bg-handled-950 min-h-[calc(100vh-3.5rem)] flex items-center justify-center px-6 overflow-hidden">
+      <ParticleCanvas />
+      <div className="hero-glow-tr" />
+      <div className="hero-glow-bl" />
+      <div className="hero-glow-center" />
 
-            <FadeIn delay={0.2}>
-              <div className="flex flex-col sm:flex-row gap-3 mb-8">
-                <Button variant="primary" size="md" className="px-5 py-2.5">
-                  Schedule a 20-min review
-                </Button>
-                <Button variant="ghost" size="md" className="px-5 py-2.5" onClick={scrollToHowDifferent}>
-                  See how it works
-                </Button>
-              </div>
-            </FadeIn>
-
-            <FadeIn delay={0.25}>
-              <div className="flex flex-wrap gap-2">
-                {trustPills.map(pill => (
-                  <Badge key={pill} variant="trust">{pill}</Badge>
-                ))}
-              </div>
-            </FadeIn>
-          </div>
-
-          {/* Right — WorkflowCard */}
-          <div className="flex justify-center lg:justify-end">
-            <WorkflowCard />
-          </div>
-        </div>
+      <div className="relative z-10 text-center max-w-4xl mx-auto">
+        <FadeIn delay={0}>
+          <h1 className="mb-6">
+            <span className="block font-sans font-semibold text-white tracking-tight leading-[0.92] text-[clamp(3rem,calc(4vw_+_2rem),5rem)]">
+              All the work you{' '}
+              <AnimatePresence mode="wait">
+                <motion.span
+                  key={ROTATING_WORDS[wordIndex]}
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 10 }}
+                  transition={{ duration: 0.25, ease: 'easeInOut' }}
+                  className="inline-block"
+                >
+                  {ROTATING_WORDS[wordIndex]}
+                </motion.span>
+              </AnimatePresence>
+              ,
+            </span>
+            <em className="block font-serif font-normal headline-glow-accent leading-[1.05] text-[clamp(3rem,calc(4vw_+_2rem),5rem)]">
+              handled.
+            </em>
+          </h1>
+        </FadeIn>
+        <FadeIn delay={0.1}>
+          <p className="text-lg font-light text-white/60 mb-10 max-w-lg mx-auto">
+            AI agents that run your back-office operations inside your existing systems.
+          </p>
+        </FadeIn>
+        <FadeIn delay={0.2}>
+          <button
+            onClick={scrollToCTA}
+            className="bg-handled-300 text-handled-950 font-semibold px-8 py-3.5 rounded-full text-[15px] hover:bg-handled-200 transition-colors"
+          >
+            Book a Demo
+          </button>
+        </FadeIn>
       </div>
     </section>
   )

@@ -11,7 +11,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     const variants = {
       primary: 'bg-handled-300 text-handled-950 hover:bg-handled-200',
       ghost: 'border border-white/30 text-white/80 hover:border-white/60 hover:text-white bg-transparent',
-      nav: 'bg-handled-800 text-white hover:bg-handled-700',
+      nav: 'border border-handled-600 text-handled-300 hover:border-handled-300 hover:text-handled-200 bg-transparent',
     }
     const sizes = {
       sm: 'px-3 py-1.5 text-sm',

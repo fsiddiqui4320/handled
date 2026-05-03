@@ -18,25 +18,24 @@ const ClockIcon = () => (
 
 export default function HowDifferent() {
   return (
-    <section id="how-different" className="bg-white py-20 px-6">
+    <section id="how-different" className="bg-handled-950 py-20 px-6">
       <div className="mx-auto max-w-content grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-        {/* Left */}
         <FadeIn>
           <div>
-            <p className="text-[10px] tracking-widest uppercase text-stone-400 font-medium mb-4">How we&apos;re different</p>
-            <h2 className="text-3xl sm:text-4xl font-medium text-stone-950 leading-tight mb-5">
+            <p className="text-[10px] tracking-widest uppercase text-handled-300 font-medium mb-4">How we&apos;re different</p>
+            <h2 className="font-serif-clean text-3xl sm:text-4xl font-semibold text-white leading-tight mb-5">
               The tools changed.<br />The manual work didn&apos;t.
             </h2>
-            <p className="text-[16px] text-stone-600 leading-relaxed">
+            <p className="text-[16px] text-white/60 leading-relaxed">
               More software, same repetitive work: checking portals, chasing follow-ups, re-entering data across systems. Handled encodes that work into AI agents that run inside your existing systems — operated by your team or managed end-to-end by ours.
             </p>
           </div>
         </FadeIn>
 
-        {/* Right — 2-card grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <FadeIn delay={0}>
             <FeatureCard
+              dark
               icon={<QueueIcon />}
               title="AI harness for your team"
               body="A custom work queue deployed into your existing tools. Our AI agents surface what needs attention, draft next steps, and handle portal interactions."
@@ -44,6 +43,7 @@ export default function HowDifferent() {
           </FadeIn>
           <FadeIn delay={0.1}>
             <FeatureCard
+              dark
               icon={<ClockIcon />}
               title="Fully managed"
               body="Our operators run the operation end-to-end. Same AI agents, same integrations — you get completed work and clear visibility without adding headcount."
