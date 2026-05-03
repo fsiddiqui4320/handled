@@ -1,5 +1,6 @@
 'use client'
 import Link from 'next/link'
+import Image from 'next/image'
 import { useState } from 'react'
 import { navLinks } from '@/content/nav'
 import Button from '@/components/ui/Button'
@@ -11,16 +12,14 @@ export default function Nav() {
     <header className="sticky top-0 z-50 bg-white border-b border-stone-200">
       <div className="mx-auto max-w-content px-6 h-14 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2">
-          <div className="w-7 h-7 bg-handled-800 rounded flex items-center justify-center">
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-              <rect x="1" y="1" width="4" height="4" rx="0.5" fill="white" opacity="0.9"/>
-              <rect x="9" y="1" width="4" height="4" rx="0.5" fill="white" opacity="0.9"/>
-              <rect x="1" y="9" width="4" height="4" rx="0.5" fill="white" opacity="0.9"/>
-              <rect x="9" y="9" width="4" height="4" rx="0.5" fill="white" opacity="0.9"/>
-            </svg>
-          </div>
-          <span className="font-medium text-stone-950 text-sm tracking-tight">Handled</span>
+        <Link href="/">
+          <Image
+            src="/logos/handled-logo.svg"
+            alt="Handled"
+            width={120}
+            height={37}
+            priority
+          />
         </Link>
 
         {/* Desktop links */}
